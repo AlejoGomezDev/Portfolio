@@ -1,7 +1,33 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-.container{
-background: #000000;
-background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 1, 61, 1) 75%);
+:root {
+  --main-background: rgb(34, 52, 77);  
 }
+
+@layer base {
+  /* Crear clases personalizadas usando las variables */
+  .bg-sidebar {
+    background-color: rgba(16, 23, 42);
+  }
+  
+  .bg-hover {
+    background-color: #78dcca;
+  }
+
+  .bg-div {
+    background-color: rgb(4, 11, 20);
+  }
+
+  .bg-selected {
+     background-color: rgba(58, 63, 95);
+  }
+
+
+}
+
+
+.container{
+background: var(--main-background)
+}
+

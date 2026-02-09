@@ -1,20 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import { Sidebar } from './components/sidebar/sidebar'
+import { SidebarProvider } from './context/SidebarContext'
+import { Main } from './components/main/main'
 function App() {
 
   return (
+     <SidebarProvider>
+       <div className="container min-w-full max-h-screen min-h-screen h-screen text-white p-2 flex">
 
-     <div className="container min-w-full max-h-screen min-h-screen text-white">
-      
-     
-
-      
-
-    </div>
- 
+        <Sidebar/>
+       
+        <Main/>
+           
+      </div>
+   
+     </SidebarProvider>
   )
 }
 

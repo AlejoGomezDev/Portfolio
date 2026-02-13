@@ -10,7 +10,7 @@ export function SidebarItem({ item, isSelected, onClick }) {
       onClick={onClick}
       className={`
             cursor-pointer group
-            flex items-center w-full p-3 rounded-full
+            flex items-center w-full p-3 rounded-lg
             transition-all duration-200
             ${
               isSelected
@@ -19,7 +19,7 @@ export function SidebarItem({ item, isSelected, onClick }) {
             }
         `}
     >
-      <Icon className="w-5 h-5 min-w-6 flex " />
+      <Icon className="w-5 h-5 min-w-10 flex" />
 
       <span
         className={`

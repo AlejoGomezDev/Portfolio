@@ -2,19 +2,70 @@ import './App.css'
 import { Sidebar } from './components/sidebar/sidebar'
 import { SidebarProvider } from './context/SidebarContext'
 import { Main } from './components/main/main'
+import { Navbar } from './components/navbar/navbar'
+import { SECTIONS } from './data/sections'
 function App() {
 
   return (
-     <SidebarProvider>
-       <div className="container min-w-full max-h-screen min-h-screen h-screen text-white p-2 flex">
+       <div className=" min-w-full h-dvh text-white flex flex-col">
 
-        <Sidebar/>
+        <Navbar
+          sections={SECTIONS}
+        />
        
-        <Main/>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
+       <p>HOLA</p>
            
       </div>
    
-     </SidebarProvider>
   )
 }
 

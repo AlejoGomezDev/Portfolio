@@ -11,36 +11,42 @@ export const SECTIONS = [
     id: "home",
     label: "Home",
     icon: House,
-    componentToRender: Home
+    componentToRender: Home,
+    href:"#home"
   },
   {
     id: "experience",
     label: "Experiencia",
     icon: BriefcaseBusiness,
-    componentToRender: Experience
+    componentToRender: Experience,
+    href:"#experience"  
   },
   {
     id: "projects",
     label: "Proyectos",
     icon: FolderOpen,
-    componentToRender: Projects
+    componentToRender: Projects,
+    href:"#projects"  
   },
     {
     id: "skills",
     label: "Habilidades",
     icon: FileCodeCorner,
-    componentToRender: Skills
+    componentToRender: Skills,
+    href:"#skills"  
   },
       {
     id: "about",
     label: "Sobre mí",
     icon: UserRound,
-    componentToRender: About
+    componentToRender: About,
+    href:"#about-me"  
   },
       {
     id: "contact",
     label: "Contacto",
     icon: Mail,
-    componentToRender: Contact
+    componentToRender: Contact,
+    href:"#contact"  
   },
 ];

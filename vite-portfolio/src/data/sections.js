@@ -9,7 +9,7 @@ import { Contact } from "../components/contact/contact";
 export const SECTIONS = [
   {
     id: "home",
-    label: "Home",
+    label: "Inicio",
     icon: House,
     componentToRender: Home,
     href:"#home"
@@ -29,15 +29,8 @@ export const SECTIONS = [
     href:"#projects"  
   },
     {
-    id: "skills",
-    label: "Habilidades",
-    icon: FileCodeCorner,
-    componentToRender: Skills,
-    href:"#skills"  
-  },
-      {
     id: "about",
-    label: "Sobre mí",
+    label: "Sobre Mí",
     icon: UserRound,
     componentToRender: About,
     href:"#about-me"  

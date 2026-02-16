@@ -3,6 +3,7 @@
 
 :root {
   --main-background: rgb(34, 52, 77);  
+  --navbar-height: 25em;
 }
 
 @layer base {
@@ -30,4 +31,3 @@
 .container{
 background: var(--main-background)
 }
-

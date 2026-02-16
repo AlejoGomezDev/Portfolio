@@ -1,7 +1,7 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 
-export function Navbar({ sections }) {
+export function Navbar({ sections, className }) {
   const [selectedSection, setSelectedSection] = useState(sections[0].id);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
@@ -9,7 +9,7 @@ export function Navbar({ sections }) {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
 
-    if (latest > previous && latest > 150) {
+    if (latest > previous && latest > 50) {
       setHidden(true);
     } else {
       setHidden(false);
@@ -32,7 +32,7 @@ export function Navbar({ sections }) {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className="w-full bg-red-500 sticky top-0 min-h-15"
+        className={` w-full bg-red-500 sticky top-0 ${className}` }
     >
       <div className="flex h-full bg-green-500 w-[80%] m-auto gap-30">
         <div className="flex rounded-full h-10 w-15 bg-blue-200 items-center my-auto justify-center">

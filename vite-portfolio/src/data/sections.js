@@ -12,34 +12,34 @@ export const SECTIONS = [
     label: "Inicio",
     icon: House,
     componentToRender: Home,
-    href:"#home"
+    bgColor: "bg-blue-900" // Azul profundo
   },
   {
     id: "experience",
     label: "Experiencia",
     icon: BriefcaseBusiness,
     componentToRender: Experience,
-    href:"#experience"  
+    bgColor: "bg-blue-800" // Azul medio-oscuro
   },
   {
     id: "projects",
     label: "Proyectos",
     icon: FolderOpen,
     componentToRender: Projects,
-    href:"#projects"  
+    bgColor: "bg-indigo-900" // Azul con tono púrpura
   },
-    {
+  {
     id: "about",
     label: "Sobre Mí",
     icon: UserRound,
     componentToRender: About,
-    href:"#about-me"  
+    bgColor: "bg-blue-950" // Azul casi noche (el más oscuro)
   },
-      {
+  {
     id: "contact",
     label: "Contacto",
     icon: Mail,
     componentToRender: Contact,
-    href:"#contact"  
+    bgColor: "bg-sky-900" // Azul con tono más claro/verdoso
   },
 ];

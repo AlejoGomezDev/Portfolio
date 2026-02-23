@@ -1,4 +1,3 @@
-// hooks/useScrollDirection.js
 import { useState, useEffect, useRef } from 'react'
 
 export function useScrollDirection(scrollContainerRef) {
@@ -9,20 +8,15 @@ export function useScrollDirection(scrollContainerRef) {
   useEffect(() => {
     const container = scrollContainerRef.current
     if (!container) return
-    
-
 
     const handleScroll = () => {
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
           const currentScrollY = container.scrollTop
           
-    
           if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
             setIsHidden(true)
-          } 
-
-          else if (currentScrollY < lastScrollY.current) {
+          } else if (currentScrollY < lastScrollY.current) {
             setIsHidden(false)
           }
           
@@ -36,12 +30,11 @@ export function useScrollDirection(scrollContainerRef) {
 
     container.addEventListener('scroll', handleScroll, { passive: true })
     
-    
     return () => {
-      console.log("Limpiando event listener")
       container.removeEventListener('scroll', handleScroll)
     }
   }, [scrollContainerRef])
 
-  return isHidden
+  // Devolver tanto el estado como la función para actualizarlo
+  return [isHidden, setIsHidden]
 }

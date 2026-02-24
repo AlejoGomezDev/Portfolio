@@ -29,10 +29,31 @@
      background-color: rgba(58, 63, 95);
   }
 
-
 }
-
 
 .container{
 background: var(--main-background)
+}
+
+.app-background {
+  background:
+    /* blobs principales grandes - mayoritariamente violeta */
+    radial-gradient(2200px 1400px at 5% 10%, rgb(26, 2, 70), transparent 80%),
+    radial-gradient(2000px 1300px at 95% 15%, rgba(35, 9, 77, 0.877), transparent 82%),
+    radial-gradient(1900px 1200px at 50% 95%, rgba(33, 3, 82, 0.541), transparent 83%),
+
+    /* blobs secundarios - mezcla violeta/azul */
+    radial-gradient(1500px 900px at 20% 70%, rgba(38, 1, 87, 0.822), transparent 85%),
+    radial-gradient(1400px 850px at 80% 60%, rgba(34, 5, 87, 0.534), transparent 88%),
+    radial-gradient(1300px 800px at 40% 30%, rgba(12, 3, 59, 0.473), transparent 90%),
+    
+    /* sutiles toques azules (20%) */
+    radial-gradient(1600px 1000px at 70% 25%, rgba(5, 1, 37, 0.733), transparent 84%),
+    radial-gradient(1500px 950px at 30% 85%, rgba(24, 3, 73, 0.178), transparent 86%),
+
+    /* viñeta más oscurecida */
+    radial-gradient(2000px 2000px at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.52) 100%),
+
+    /* base ultra oscura con tonos violetas */
+    linear-gradient(145deg, #020113 0%, #14062b 30%, #1f0a33 60%, #0c031a 100%);
 }

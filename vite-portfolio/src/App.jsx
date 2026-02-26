@@ -4,6 +4,7 @@ import { SECTIONS } from "./data/sections";
 import { useEffect, useRef, useState } from "react";
 import { EllipsisIcon } from "lucide-react";
 import { useScroll } from "framer-motion";
+import { Button } from "./components/ui/Button";
 
 function App() {
   const [selectedSection, setSelectedSection] = useState(SECTIONS[0].id);
@@ -58,7 +59,7 @@ useEffect(() => {
     return (
       <div>
         <h1 className="text-sm font-semibold inline tracking-[.2em] ">
-          ALEJO GOMEZ <span className="text-violet-400"> | DEV</span>
+          ALEJO GOMEZ <span className="text-gradient-primary"> | DEV</span>
         </h1>
       </div>
     );
@@ -66,9 +67,7 @@ useEffect(() => {
 
   const RightNavbarButton = () => {
     return (
-      <button className="cursor-pointer rounded-md p-1 w-30 bg-transparent border border-gray-300 hover:scale-105 transition-all duration-300 ease-in-out">
-        ¡Hablemos!
-      </button>
+     <Button className="bg-gradient-secondary w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0" text="¡Hablemos!"/>
     );
   };
 
@@ -79,14 +78,14 @@ useEffect(() => {
       <header className="relative">
         <Navbar
           sections={SECTIONS}
-          navbarClassName={`w-[80%] fixed top-2 left-0 right-0 m-auto bg-gray-700/40 rounded-full shrink-0 backdrop-blur-3xl border border-gray-800 h-[5em] font-normal transition-all duration-300 transform ${
+          navbarClassName={`w-[80%] fixed top-2 left-0 right-0 m-auto bg-transparent rounded-full shrink-0 backdrop-blur-xl border border-gray-800 h-[5em] font-normal transition-all duration-300 transform ${
             isNavbarHidden
               ? "-translate-y-[120%] opacity-0 pointer-events-none"
               : "translate-y-0 opacity-100"
           }`}
-          selectedClassName="text-violet-400"
+          selectedClassName="text-gradient-primary"
           selectedSection={selectedSection}
-          hoverClassName="hover:text-violet-400"
+          hoverClassName="hover:text-pink-300"
           underlineClassName=""
           hidden={isNavbarHidden}
           textClassName="text-gray-200"
@@ -106,7 +105,7 @@ useEffect(() => {
             setIsNavbarHidden(false)
           }}
         >
-          <div className="flex items-center text-center h-full cursor-default justify-center rounded-full border bg-gray-700/40 border-gray-800 shrink-0 backdrop-blur-3xl mt-1">
+          <div className="flex items-center text-center h-full cursor-default justify-center rounded-full border bg-transparent border-gray-800 shrink-0 backdrop-blur-xl mt-1">
             <EllipsisIcon className="h-5" />
           </div>
         </div>
@@ -121,7 +120,7 @@ useEffect(() => {
             <section
               key={section.id}
               id={section.id}
-              className={`w-[80%] mx-auto min-h-dvh `}
+              className={`w-[80%] mx-auto min-h-dvh h-dvh  mb-2 `}
             >
               <h2 className="sr-only">{section.label}</h2>
               <Component />

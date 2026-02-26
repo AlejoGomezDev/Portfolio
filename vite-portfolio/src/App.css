@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 :root {
-  --main-background: rgb(34, 52, 77);  
+  --main-background: rgb(34, 52, 77);
   --navbar-height: 25em;
 }
 
@@ -16,7 +16,7 @@
   .bg-sidebar {
     background-color: rgba(16, 23, 42);
   }
-  
+
   .bg-hover {
     background-color: #78dcca;
   }
@@ -26,34 +26,83 @@
   }
 
   .bg-selected {
-     background-color: rgba(58, 63, 95);
+    background-color: rgba(58, 63, 95);
   }
-
 }
 
-.container{
-background: var(--main-background)
+.container {
+  background: var(--main-background);
 }
 
 .app-background {
   background:
-    /* blobs principales grandes - mayoritariamente violeta */
-    radial-gradient(2200px 1400px at 5% 10%, rgb(26, 2, 70), transparent 80%),
-    radial-gradient(2000px 1300px at 95% 15%, rgba(35, 9, 77, 0.877), transparent 82%),
-    radial-gradient(1900px 1200px at 50% 95%, rgba(33, 3, 82, 0.541), transparent 83%),
 
-    /* blobs secundarios - mezcla violeta/azul */
-    radial-gradient(1500px 900px at 20% 70%, rgba(38, 1, 87, 0.822), transparent 85%),
+    radial-gradient(2000px 1300px at 95% 15%, rgba(35, 9, 77, 0.877), transparent 82%),
+    radial-gradient(1900px 1200px at 50% 95%, rgba(33, 3, 82, 0.541), transparent 83%), 
+
+     radial-gradient(1500px 900px at 20% 70%, rgba(38, 1, 87, 0.822), transparent 85%),
     radial-gradient(1400px 850px at 80% 60%, rgba(34, 5, 87, 0.534), transparent 88%),
     radial-gradient(1300px 800px at 40% 30%, rgba(12, 3, 59, 0.473), transparent 90%),
     
-    /* sutiles toques azules (20%) */
     radial-gradient(1600px 1000px at 70% 25%, rgba(5, 1, 37, 0.733), transparent 84%),
     radial-gradient(1500px 950px at 30% 85%, rgba(24, 3, 73, 0.178), transparent 86%),
 
-    /* viñeta más oscurecida */
+    
     radial-gradient(2000px 2000px at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.52) 100%),
 
-    /* base ultra oscura con tonos violetas */
-    linear-gradient(145deg, #020113 0%, #14062b 30%, #1f0a33 60%, #0c031a 100%);
+
+    radial-gradient(
+      700px circle at 30% 0%,
+      rgba(25, 127, 141, 0.18),
+      transparent 100%
+    ),
+    radial-gradient(
+      700px circle at 90% 20%,
+      rgba(25, 8, 71, 0.959),
+      transparent 100%
+    ),
+    radial-gradient(
+      600px circle at 0% 60%,
+      rgba(82, 70, 114, 0.164),
+      transparent 100%
+    ),
+    /* glow inferior derecho */
+    radial-gradient(
+        500px circle at 90% 90%,
+        rgba(29, 12, 85, 0.25) 0%,
+        transparent 100%
+      ),
+
+   linear-gradient(180deg, #1a1440 0%, #120c2e 40%, #08051a 100%);
+}
+
+:root {
+  --gradient-primary: linear-gradient(90deg,rgba(221, 168, 113, 1) 0%, rgba(219, 14, 198, 1) 100%);
+  --gradient-secondary: linear-gradient(90deg,rgb(88, 68, 165) 0%, rgb(129, 8, 117) 100%);
+}
+
+.bg-gradient-primary { background: var(--gradient-primary); }
+.bg-gradient-secondary { background: var(--gradient-secondary); }
+
+.text-gradient-primary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-secondary {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hover effects */
+/* .bg-gradient-primary:hover { 
+  background: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%);
+} */
+
+/* Transiciones suaves */
+.transition-gradient {
+  transition: background 0.3s ease;
 }

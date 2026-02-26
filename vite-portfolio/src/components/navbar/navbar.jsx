@@ -78,7 +78,7 @@ const defaultHandleClick  = (e, id) => {
         </ul>
 
         {rightButton && (
-          <div className=" mr-0 flex items-center">{rightButton}</div>
+          <div className=" mr-0 flex items-center ">{rightButton}</div>
         )}
       </div>
     </motion.nav>

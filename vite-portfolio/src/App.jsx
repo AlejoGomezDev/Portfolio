@@ -16,12 +16,16 @@ function App() {
 useEffect(() => {
   const unsubscribe = scrollY.on("change", (current) => {
     const scrollingDown = current > lastScrollTop.current;
+    const isNearTop = current <= 20;
 
-    if (current <= 20) {
+    // 🟢 Si estamos arriba de todo → siempre visible
+    if (isNearTop) {
       setIsNavbarHidden(false);
-    } else if (scrollingDown ) {
-      setIsNavbarHidden(true);
     } 
+    // 🔴 Si bajamos pasando el límite → ocultar
+    else if (scrollingDown) {
+      setIsNavbarHidden(true);
+    }
 
     lastScrollTop.current = current;
   });
@@ -29,36 +33,40 @@ useEffect(() => {
   return unsubscribe;
 }, [scrollY]);
 
-  const handleNavbarMouseLeave = () => {
-    if (selectedSection !== SECTIONS[0].id) {
-      setTimeout(() => {
-        setIsNavbarHidden(true);
-      }, 100);
-    } else {
-      setIsNavbarHidden(false);
-    }
-  };
+const handleNavbarMouseLeave = () => {
+  const isNearTop = lastScrollTop.current <= 20;
 
-  const handleNavbarClick = (e, id) => {
-    e.preventDefault();
+  // Si estamos arriba → nunca ocultar
+  if (isNearTop) return;
 
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  // Si no estamos arriba → ocultar SIEMPRE
+  setIsNavbarHidden(true);
+};
 
-    //Solo ocultar si no es la misma seccion
-    if(id !== selectedSection){
-      setIsNavbarHidden(true);
-      setSelectedSection(id);
-      window.history.pushState({}, "", `#${id}`);
-    }
-  };
+const handleNavbarClick = (e, id) => {
+  e.preventDefault();
+
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+
+  // Solo ocultar si cambia de sección
+  if (id !== selectedSection) {
+    setSelectedSection(id);
+    setIsNavbarHidden(true);
+    window.history.pushState({}, "", `#${id}`);
+  }
+};
+
+const handleNavbarMouseEnter = () => {
+  setIsNavbarHidden(false);
+};
 
   const Logo = () => {
     return (
       <div>
-        <h1 className="text-sm font-semibold inline tracking-[.2em] ">
+        <h1 className="text-sm font-semibold inline tracking-[.2em] pointer-events-none ">
           ALEJO GOMEZ <span className="text-gradient-primary"> | DEV</span>
         </h1>
       </div>
@@ -67,7 +75,7 @@ useEffect(() => {
 
   const RightNavbarButton = () => {
     return (
-     <Button className="bg-gradient-secondary w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0" text="¡Hablemos!"/>
+     <Button className="bg-gradient-secondary italic w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0" text="¡Hablemos!"/>
     );
   };
 
@@ -85,7 +93,7 @@ useEffect(() => {
           }`}
           selectedClassName="text-gradient-primary"
           selectedSection={selectedSection}
-          hoverClassName="hover:text-pink-300"
+          hoverClassName="hover:text-blue-700"
           underlineClassName=""
           hidden={isNavbarHidden}
           textClassName="text-gray-200"
@@ -101,9 +109,7 @@ useEffect(() => {
               ? "opacity-100 translate-y-0"
               : "opacity-100 -translate-y-20 pointer-events-none"
           }`}
-          onMouseEnter={() => {
-            setIsNavbarHidden(false)
-          }}
+          onMouseEnter={handleNavbarMouseEnter}
         >
           <div className="flex items-center text-center h-full cursor-default justify-center rounded-full border bg-transparent border-gray-800 shrink-0 backdrop-blur-xl mt-1">
             <EllipsisIcon className="h-5" />

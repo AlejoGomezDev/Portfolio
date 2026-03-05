@@ -39,7 +39,7 @@ const defaultHandleClick  = (e, id) => {
         duration: 0.1,
         ease: "easeInOut",
       }}
-      className={`  ${navbarClassName} `}
+      className={`  ${navbarClassName} z-9999`}
 
       onMouseLeave={onMouseLeave}
     >

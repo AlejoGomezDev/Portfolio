@@ -18,11 +18,9 @@ useEffect(() => {
     const scrollingDown = current > lastScrollTop.current;
     const isNearTop = current <= 20;
 
-    // 🟢 Si estamos arriba de todo → siempre visible
     if (isNearTop) {
       setIsNavbarHidden(false);
     } 
-    // 🔴 Si bajamos pasando el límite → ocultar
     else if (scrollingDown) {
       setIsNavbarHidden(true);
     }
@@ -36,10 +34,8 @@ useEffect(() => {
 const handleNavbarMouseLeave = () => {
   const isNearTop = lastScrollTop.current <= 20;
 
-  // Si estamos arriba → nunca ocultar
   if (isNearTop) return;
 
-  // Si no estamos arriba → ocultar SIEMPRE
   setIsNavbarHidden(true);
 };
 
@@ -57,6 +53,7 @@ const handleNavbarClick = (e, id) => {
     setIsNavbarHidden(true);
     window.history.pushState({}, "", `#${id}`);
   }
+
 };
 
 const handleNavbarMouseEnter = () => {
@@ -75,7 +72,7 @@ const handleNavbarMouseEnter = () => {
 
   const RightNavbarButton = () => {
     return (
-     <Button className="bg-gradient-secondary italic w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0" text="¡Hablemos!"/>
+     <Button className="bg-gradient-secondary italic w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0" text="¡Hablemos!" animation={true}/>
     );
   };
 
@@ -93,7 +90,7 @@ const handleNavbarMouseEnter = () => {
           }`}
           selectedClassName="text-gradient-primary"
           selectedSection={selectedSection}
-          hoverClassName="hover:text-blue-700"
+          hoverClassName="hover:text-blue-500"
           underlineClassName=""
           hidden={isNavbarHidden}
           textClassName="text-gray-200"
@@ -104,7 +101,7 @@ const handleNavbarMouseEnter = () => {
         />
 
         <div
-          className={`fixed top-0 h-[1.5em]  w-[15%]  m-auto left-0 right-0 transition-all duration-300  ${
+          className={`fixed top-0 h-[1.5em]  w-[15%]  m-auto left-0 right-0 transition-all duration-300 z-999  ${
             isNavbarHidden
               ? "opacity-100 translate-y-0"
               : "opacity-100 -translate-y-20 pointer-events-none"
@@ -126,7 +123,7 @@ const handleNavbarMouseEnter = () => {
             <section
               key={section.id}
               id={section.id}
-              className={`w-[80%] mx-auto min-h-dvh h-dvh  mb-2 `}
+              className={`w-[80%] mx-auto min-h-dvh   mb-2 `}
             >
               <h2 className="sr-only">{section.label}</h2>
               <Component />

@@ -1,0 +1,148 @@
+// ExperienciaLaboral.jsx
+import { useState } from 'react';
+import { Calendar, Briefcase, Building2, ChevronDown, ChevronUp } from 'lucide-react';
+
+export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
+  const [mostrarDetalle, setMostrarDetalle] = useState(false);
+
+  return (
+    <div className={`w-full transition-all duration-300 flex ${mostrarDetalle ? 'mb-4' : ''}`}>
+      <div 
+        className={`
+          rounded-xl shadow-lg 
+          flex  p-4 items-center gap-4
+          border border-blue-500
+          w-[50%] h-50
+          transition-all duration-300
+          ${activo ? ' bg-linear-to-br from-transparent to-blue-500/50' : ' bg-linear-to-br from-transparent to-blue-950/30'}
+        `}
+      >
+        {/* Logo */}
+        <div className="h-full w-40 rounded-lg overflow-hidden bg-transparent shrink-0">
+          {experiencia.imagen ? (
+            <img 
+              src={experiencia.imagen} 
+              alt={`Logo ${experiencia.empresa}`}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.style.display = 'none';
+                e.target.parentElement.innerHTML = `<div class=" h-full w-full flex bg-linear-to-br from-blue-600 to-purple-600  items-center justify-center text-white font-bold text-xl">${experiencia.empresa.charAt(0)}</div>`;
+              }}
+            />
+          ) : (
+            <div className="w-full h-full bg-linear-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
+              {experiencia.empresa.charAt(0)}
+            </div>
+          )}
+        </div>
+
+        {/* Información principal */}
+        <div className="grow flex flex-col justify-start h-full space-y-4 text-gray-300 text-lh">
+          <div className="flex items-center gap-2 ">
+            <Building2 size={22} className='text-blue-400'/>
+            <h3 className="text-2xl font-semibold text-white">{experiencia.empresa}</h3>
+          </div>
+          
+          <div className="flex items-center gap-2 ">
+            <Briefcase size={22} />
+            <h4 >{experiencia.puesto}</h4>
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <Calendar size={22} />
+            <span>{experiencia.fechaInicio} ~ {experiencia.fechaFin}</span>
+            {experiencia.actual && (
+              <span className="bg-blue-500 text-white px-4 py-1 rounded-full ">
+                Actual
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Botón ver más */}
+        <button
+          onClick={() => setMostrarDetalle(!mostrarDetalle)}
+          className="
+            bg-orange-400 hover:bg-neutral-700 
+            text-gray-300 hover:text-white
+            rounded-full px-4
+            transition-all duration-300
+            border border-neutral-700 hover:border-neutral-600
+            flex items-center gap-2
+          "
+        >
+          <span className="text-sm font-medium">
+            {mostrarDetalle ? 'Ver menos' : '+'}
+          </span>
+        </button>
+      </div>
+
+      {/* Detalles expandibles - Efecto flotante */}
+      {mostrarDetalle && (
+        <div className="relative mt-2 ml-25 mr-4">
+
+          {/* Contenido con efecto flotante y transparencia */}
+          <div className="
+            bg-neutral-800/90 backdrop-blur-sm
+            border border-neutral-700
+            rounded-xl p-6
+            shadow-2xl
+            transform transition-all duration-500
+            animate-in fade-in slide-in-from-top-2
+            hover:shadow-blue-500/10
+          ">
+            <div className="space-y-4">
+              {/* Descripción */}
+              <div className="prose prose-invert max-w-none">
+                <p className="text-gray-300 leading-relaxed">
+                  {experiencia.descripcion}
+                </p>
+              </div>
+
+              {/* Responsabilidades / Logros */}
+              {experiencia.responsabilidades && experiencia.responsabilidades.length > 0 && (
+                <div>
+                  <h5 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3">
+                    Responsabilidades y Logros
+                  </h5>
+                  <ul className="space-y-2">
+                    {experiencia.responsabilidades.map((item, index) => (
+                      <li key={index} className="flex items-start gap-3 text-gray-400">
+                        <span className="text-blue-500 mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Tecnologías */}
+              {experiencia.tecnologias && experiencia.tecnologias.length > 0 && (
+                <div className="pt-2">
+                  <div className="flex flex-wrap gap-2">
+                    {experiencia.tecnologias.map((tech, index) => (
+                      <span 
+                        key={index}
+                        className="
+                          px-3 py-1 
+                          bg-neutral-700/50 
+                          text-gray-300 text-sm 
+                          rounded-full
+                          border border-neutral-600
+                          backdrop-blur-sm
+                        "
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};

@@ -123,7 +123,7 @@ const handleNavbarMouseEnter = () => {
             <section
               key={section.id}
               id={section.id}
-              className={`w-[80%] mx-auto min-h-dvh   mb-2 `}
+              className={`w-[80%] mx-auto min-h-dvh gap-2 mb-2 pt-4 `}
             >
               <h2 className="sr-only">{section.label}</h2>
               <Component />

@@ -6,15 +6,15 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
   const [mostrarDetalle, setMostrarDetalle] = useState(false);
 
   return (
-    <div className={`w-full transition-all duration-300 flex ${mostrarDetalle ? 'mb-4' : ''}`}>
+    <div className={`w-full transition-all duration-300 flex h-50 rounded-xl overflow-hidden justify-between`}>
       <div 
         className={`
           rounded-xl shadow-lg 
           flex  p-4 items-center gap-4
           border border-blue-500
-          w-[50%] h-50
+          w-[50%] h-full
           transition-all duration-300
-          ${activo ? ' bg-linear-to-br from-transparent to-blue-500/50' : ' bg-linear-to-br from-transparent to-blue-950/30'}
+          ${activo ? ' bg-linear-to-br from-transparent from-25%  to-blue-500/50 ' : ' bg-linear-to-br from-transparent to-blue-950/30'}
         `}
       >
         {/* Logo */}
@@ -37,63 +37,55 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
           )}
         </div>
 
-        {/* Información principal */}
-        <div className="grow flex flex-col justify-start h-full space-y-4 text-gray-300 text-lh">
-          <div className="flex items-center gap-2 ">
-            <Building2 size={22} className='text-blue-400'/>
-            <h3 className="text-2xl font-semibold text-white">{experiencia.empresa}</h3>
+        <div className='w-full h-full flex flex-col justify-between '>
+          {/* Información principal */}
+          <div className="grow flex flex-col justify-start h-full space-y-4 text-gray-300 text-lg">
+            <div className="flex items-center gap-2 ">
+              <Building2 size={22} className='text-blue-400'/>
+              <h3 className="text-2xl font-semibold text-white">{experiencia.empresa}</h3>
+            </div>
+            
+            <div className="flex items-center gap-2 ">
+              <Briefcase size={22} />
+              <h4 >{experiencia.puesto}</h4>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <Calendar size={22} />
+              <span>{experiencia.fechaInicio} ~ {experiencia.fechaFin}</span>
+              
+            </div>
+
           </div>
-          
-          <div className="flex items-center gap-2 ">
-            <Briefcase size={22} />
-            <h4 >{experiencia.puesto}</h4>
-          </div>
-          
-          <div className="flex items-center gap-2">
-            <Calendar size={22} />
-            <span>{experiencia.fechaInicio} ~ {experiencia.fechaFin}</span>
+
             {experiencia.actual && (
-              <span className="bg-blue-500 text-white px-4 py-1 rounded-full ">
-                Actual
-              </span>
-            )}
+                <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm w-min">
+                  Actual
+                </span>
+              )}
+
+              
+       
           </div>
+
         </div>
 
-        {/* Botón ver más */}
-        <button
-          onClick={() => setMostrarDetalle(!mostrarDetalle)}
-          className="
-            bg-orange-400 hover:bg-neutral-700 
-            text-gray-300 hover:text-white
-            rounded-full px-4
-            transition-all duration-300
-            border border-neutral-700 hover:border-neutral-600
-            flex items-center gap-2
-          "
-        >
-          <span className="text-sm font-medium">
-            {mostrarDetalle ? 'Ver menos' : '+'}
-          </span>
-        </button>
-      </div>
 
-      {/* Detalles expandibles - Efecto flotante */}
-      {mostrarDetalle && (
-        <div className="relative mt-2 ml-25 mr-4">
+      {/* Detalles  */}
 
-          {/* Contenido con efecto flotante y transparencia */}
+        <div className=" w-[48%] overflow-hidden ">
+
+
           <div className="
-            bg-neutral-800/90 backdrop-blur-sm
-            border border-neutral-700
-            rounded-xl p-6
+            backdrop-blur-sm
+            border border-blue-700
+            rounded-xl p-4
             shadow-2xl
             transform transition-all duration-500
             animate-in fade-in slide-in-from-top-2
-            hover:shadow-blue-500/10
-          ">
+            hover:shadow-blue-500/10 overflow-y-scroll max-h-full">
             <div className="space-y-4">
-              {/* Descripción */}
+
               <div className="prose prose-invert max-w-none">
                 <p className="text-gray-300 leading-relaxed">
                   {experiencia.descripcion}
@@ -103,13 +95,13 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
               {/* Responsabilidades / Logros */}
               {experiencia.responsabilidades && experiencia.responsabilidades.length > 0 && (
                 <div>
-                  <h5 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3">
+                  <h5 className="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-3">
                     Responsabilidades y Logros
                   </h5>
                   <ul className="space-y-2">
                     {experiencia.responsabilidades.map((item, index) => (
                       <li key={index} className="flex items-start gap-3 text-gray-400">
-                        <span className="text-blue-500 mt-1">•</span>
+                        <span className="text-blue-700 mt-1">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -126,10 +118,9 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
                         key={index}
                         className="
                           px-3 py-1 
-                          bg-neutral-700/50 
                           text-gray-300 text-sm 
                           rounded-full
-                          border border-neutral-600
+                          border border-blue-700
                           backdrop-blur-sm
                         "
                       >
@@ -142,7 +133,7 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
             </div>
           </div>
         </div>
-      )}
+
     </div>
   );
 };

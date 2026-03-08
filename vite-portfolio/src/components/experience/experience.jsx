@@ -5,7 +5,7 @@ import { EXPERIENCIAS } from "../../data/experience";
 import { ExperienciaLaboralItem } from "./experiencia-laboral-item";
 export function Experience() {
   return (
-    <div className="flex pt-2 w-full h-dvh flex-col justify-center space-y-10 ">
+    <div className="flex w-full min-h-dvh  overflow-hidden flex-col justify-center space-y-10 mb-20">
       <SectionTitle text={"Experiencia"}/>
     
       <div className="flex flex-col gap-10">

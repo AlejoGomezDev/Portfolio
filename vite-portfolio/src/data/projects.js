@@ -1,0 +1,302 @@
+export const PROJECTS = [
+  {
+    title: "Portfolio Web",
+    description: "Mi portfolio web",
+    imageUrl: "/assets/projects-images/PortfolioWeb2.png",
+    driveUrl: "https://drive.google.com/drive/folders/13NMxndRt0_SmGCm81oToAhaJUNfxUgJI?usp=sharing",
+    GitHubUrl: "https://github.com/AlejoGomezDev/Portfolio-Astro-React.git",
+    techs: [
+      {
+        alt: "React",
+        iconUrl: "/assets/logos/skills/react.png"
+      },
+      {
+        alt: "Astro",
+        iconUrl: "/assets/logos/skills/astro.png"
+      },
+      {
+        alt: "Tailwind CSS",
+        iconUrl: "/assets/logos/skills/tailwind.png"
+      }
+    ],
+    content: () => {
+      return (
+        `<div>
+          <h2>Portfolio Web</h2>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+      );
+    }
+  },
+  {
+    title: "Banco Honse",
+    description: "Sistema de gestión de Banco",
+    imageUrl: "/assets/projects-images/bancoHonse.png",
+    driveUrl: "https://drive.google.com/drive/folders/1t8DK7pkJbPGbzHIlmLR53qEWtzNX_Gxe?usp=sharing",
+    GitHubUrl: "https://github.com/AlejoGomezDev/BancoHonse",
+    techs: [
+      {
+        alt: "Java",
+        iconUrl: "/assets/logos/skills/java.png"
+      },
+      {
+        alt: "SQL",
+        iconUrl: "/assets/logos/skills/sql.png"
+      },
+      {
+        alt: "MySQL",
+        iconUrl: "/assets/logos/skills/mysql.png"
+      },
+      {
+        alt: "JavaScript",
+        iconUrl: "/assets/logos/skills/js.png"
+      },
+      {
+        alt: "HTML5",
+        iconUrl: "/assets/logos/skills/html5.png"
+      },
+      {
+        alt: "CSS3",
+        iconUrl: "/assets/logos/skills/css3.png"
+      }
+    ],
+    content: () => {
+      return (
+        `<div>
+          <h2>Banco Honse</h2>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+      );
+    }
+  },
+  {
+    title: "Reactive Search",
+    description: "Biblioteca de Peliculas Reactiva",
+    imageUrl: "/assets/projects-images/ReactiveSearch2.png",
+    driveUrl: "https://drive.google.com/drive/folders/1rJDNOde9oeIJnAYOWgGE047xEivRVy7K?usp=sharing",
+    GitHubUrl: "https://github.com/AlejoGomezDev/ReactiveSearch.git",
+    techs: [
+      {
+        alt: "React",
+        iconUrl: "/assets/logos/skills/react.png"
+      },
+      {
+        alt: "JavaScript",
+        iconUrl: "/assets/logos/skills/js.png"
+      },
+      {
+        alt: "CSS3",
+        iconUrl: "/assets/logos/skills/css3.png"
+      },
+      {
+        alt: "HTML5",
+        iconUrl: "/assets/logos/skills/html5.png"
+      }
+    ],
+    content: () => {
+      return (
+        `<div>
+          <h2>Reactive Search</h2>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+      );
+    }
+  },
+  {
+    title: "The Chained Dungeon",
+    description: "Juego de mazmorras",
+    imageUrl: "/assets/projects-images/TheCD.png",
+    driveUrl: "https://drive.google.com/drive/folders/1TbB_2g_o13Wu9z8yuZpmMJQFqrDO1rDR?usp=sharing",
+    GitHubUrl: "https://github.com/AlejoGomezDev/TheChainedDungeon.git",
+    techs: [
+      {
+        alt: "C++",
+        iconUrl: "/assets/logos/skills/c++.png"
+      },
+      {
+        alt: "SFML",
+        iconUrl: "/assets/logos/skills/sfml.png"
+      }
+    ],
+    content: () => {
+      return (
+        `<div>
+          <h2>The Chained Dungeon</h2>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+      );
+    }
+  },
+  {
+    title: "Gestión para Clínica",
+    description: "Sistema de gestión",
+    imageUrl: "/assets/projects-images/Clinica1.png",
+    driveUrl: "https://drive.google.com/drive/folders/1cqnZapKfmqFRs4z3m3U-GHEs79RyamSz?usp=sharing",
+    GitHubUrl: "https://github.com/AlejoGomezDev/SistemaGestionClinica.git",
+    techs: [
+      {
+        name: "C#",
+        alt: "C#",
+        iconUrl: "/assets/logos/skills/cSharp.png"
+      },
+      {
+        name: "SQL Server",
+        alt: "SQL Server",
+        iconUrl: "/assets/logos/skills/sqlServer.png"
+      },
+      {
+        name: "SQL",
+        alt: "SQL",
+        iconUrl: "/assets/logos/skills/sql.png"
+      },
+      {
+        name: ".NET",
+        alt: ".NET",
+        iconUrl: "/assets/logos/skills/net.png"
+      }
+    ],
+    content: () => {
+      return (
+        `<div>
+          <h2>Gestión para Clínica</h2>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+      );
+    }
+  },
+  {
+    title: "CodeFlix",
+    description: "Biblioteca de Peliculas",
+    imageUrl: "/assets/projects-images/CodeFlix1.png",
+    driveUrl: "https://drive.google.com/drive/folders/1VgIciZZLKRH8c-jHnSiDECDPHDSvqFil?usp=sharing",
+    GitHubUrl: "https://github.com/AlejoGomezDev/CodeFlix.git",
+    techs: [
+      {
+        alt: "JavaScript",
+        iconUrl: "/assets/logos/skills/js.png"
+      },
+      {
+        alt: "HTML5",
+        iconUrl: "/assets/logos/skills/html5.png"
+      },
+      {
+        alt: "CSS3",
+        iconUrl: "/assets/logos/skills/css3.png"
+      },
+      {
+        alt: "MySQL",
+        iconUrl: "/assets/logos/skills/mysql.png"
+      },
+      {
+        alt: "NodeJS",
+        iconUrl: "/assets/logos/skills/node.png"
+      },
+      {
+        alt: "Express",
+        iconUrl: "/assets/logos/skills/express.png"
+      }
+    ],
+    content: () => {
+      return (
+        `<div>
+          <h2>CodeFlix</h2>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+      );
+    }
+  },
+  {
+    title: "Portfolio Web (antiguo)",
+    description: "Mi (antiguo) portfolio web",
+    imageUrl: "/assets/projects-images/PortfolioWeb1.png",
+    driveUrl: "https://drive.google.com/drive/folders/1AwEIYhncSpPz7xzt76bIfM9K3ITeRKYh?usp=sharing",
+    GitHubUrl: "https://github.com/AlejoGomezDev/PortfolioWeb.git",
+    techs: [
+      {
+        alt: "JavaScript",
+        iconUrl: "/assets/logos/skills/js.png"
+      },
+      {
+        alt: "HTML5",
+        iconUrl: "/assets/logos/skills/html5.png"
+      },
+      {
+        alt: "CSS3",
+        iconUrl: "/assets/logos/skills/css3.png"
+      }
+    ],
+    content: () => {
+      return (
+        `<div>
+          <h2>Portfolio Web (antiguo)</h2>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+      );
+    }
+  },
+  {
+    title: "Burguer::Code",
+    description: "Sitio web de hamburguesería",
+    imageUrl: "/assets/projects-images/BurguerCode1.png",
+    driveUrl: "https://drive.google.com/drive/folders/1AhBDPoYYdZZByxVOd6jMHMNGDZENAHst?usp=sharing",
+    GitHubUrl: "https://github.com/AlejoGomezDev/Burguer--Code.git",
+    techs: [
+      {
+        alt: "JavaScript",
+        iconUrl: "/assets/logos/skills/js.png"
+      },
+      {
+        alt: "HTML5",
+        iconUrl: "/assets/logos/skills/html5.png"
+      },
+      {
+        alt: "CSS3",
+        iconUrl: "/assets/logos/skills/css3.png"
+      },
+      {
+        alt: "BootStrap",
+        iconUrl: "/assets/logos/skills/bootstrap.png"
+      }
+    ],
+    content: () => {
+      return (
+        `<div>
+          <h2>Burguer::Code</h2>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+      );
+    }
+  }
+];

@@ -28,7 +28,7 @@ return (
         initial={{ x: -600, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.7 }}
-        className="max-w-xl flex flex-col justify-evenly h-110 "
+        className="max-w-xl 2xl:max-w-2xl flex flex-col justify-evenly h-110 "
       >
         <div className=" max-w-none min-h-[80%]  flex flex-col justify-around ">
           <p className="text-2xl xl:text-3xl text-gray-400">
@@ -38,7 +38,7 @@ return (
             </span>
           </p>
 
-          <h2 className="text-[4rem]/[1] xl:text-[5rem]/[1] 2xl:text-[6rem]/[1] font-bold italic text-gradient-primary">
+          <h2 className="text-[4rem]/[1] xl:text-[5rem]/[1] 2xl:text-[7rem]/[1] font-bold italic text-gradient-primary">
             SOFTWARE DEVELOPER
           </h2>
 

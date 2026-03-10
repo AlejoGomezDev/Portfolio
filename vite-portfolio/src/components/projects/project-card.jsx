@@ -9,9 +9,8 @@ export function ProjectCard({ project, index }) {
 
   return (
     <div
+    className="w-full max-w-100 aspect-square"
       style={{
-        width: "25rem",
-        height: "25rem",
         perspective: "2000px",
       }}
     >

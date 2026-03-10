@@ -1,7 +1,7 @@
 export const PROJECTS = [
   {
     title: "Portfolio Web",
-    description: "Mi portfolio web",
+    description: "Mi (antiguo) portfolio web",
     imageUrl: "/assets/projects-images/PortfolioWeb2.png",
     driveUrl: "https://drive.google.com/drive/folders/13NMxndRt0_SmGCm81oToAhaJUNfxUgJI?usp=sharing",
     GitHubUrl: "https://github.com/AlejoGomezDev/Portfolio-Astro-React.git",
@@ -44,10 +44,6 @@ export const PROJECTS = [
         iconUrl: "/assets/logos/skills/java.png"
       },
       {
-        alt: "SQL",
-        iconUrl: "/assets/logos/skills/sql.png"
-      },
-      {
         alt: "MySQL",
         iconUrl: "/assets/logos/skills/mysql.png"
       },
@@ -55,14 +51,6 @@ export const PROJECTS = [
         alt: "JavaScript",
         iconUrl: "/assets/logos/skills/js.png"
       },
-      {
-        alt: "HTML5",
-        iconUrl: "/assets/logos/skills/html5.png"
-      },
-      {
-        alt: "CSS3",
-        iconUrl: "/assets/logos/skills/css3.png"
-      }
     ],
     content: () => {
       return (
@@ -161,11 +149,6 @@ export const PROJECTS = [
         iconUrl: "/assets/logos/skills/sqlServer.png"
       },
       {
-        name: "SQL",
-        alt: "SQL",
-        iconUrl: "/assets/logos/skills/sql.png"
-      },
-      {
         name: ".NET",
         alt: ".NET",
         iconUrl: "/assets/logos/skills/net.png"
@@ -195,14 +178,7 @@ export const PROJECTS = [
         alt: "JavaScript",
         iconUrl: "/assets/logos/skills/js.png"
       },
-      {
-        alt: "HTML5",
-        iconUrl: "/assets/logos/skills/html5.png"
-      },
-      {
-        alt: "CSS3",
-        iconUrl: "/assets/logos/skills/css3.png"
-      },
+
       {
         alt: "MySQL",
         iconUrl: "/assets/logos/skills/mysql.png"
@@ -229,39 +205,39 @@ export const PROJECTS = [
       );
     }
   },
-  {
-    title: "Portfolio Web (antiguo)",
-    description: "Mi (antiguo) portfolio web",
-    imageUrl: "/assets/projects-images/PortfolioWeb1.png",
-    driveUrl: "https://drive.google.com/drive/folders/1AwEIYhncSpPz7xzt76bIfM9K3ITeRKYh?usp=sharing",
-    GitHubUrl: "https://github.com/AlejoGomezDev/PortfolioWeb.git",
-    techs: [
-      {
-        alt: "JavaScript",
-        iconUrl: "/assets/logos/skills/js.png"
-      },
-      {
-        alt: "HTML5",
-        iconUrl: "/assets/logos/skills/html5.png"
-      },
-      {
-        alt: "CSS3",
-        iconUrl: "/assets/logos/skills/css3.png"
-      }
-    ],
-    content: () => {
-      return (
-        `<div>
-          <h2>Portfolio Web (antiguo)</h2>
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
-        </div>`
-      );
-    }
-  },
+  // {
+  //   title: "Portfolio Web (antiguo)",
+  //   description: "Mi (antiguo) portfolio web",
+  //   imageUrl: "/assets/projects-images/PortfolioWeb1.png",
+  //   driveUrl: "https://drive.google.com/drive/folders/1AwEIYhncSpPz7xzt76bIfM9K3ITeRKYh?usp=sharing",
+  //   GitHubUrl: "https://github.com/AlejoGomezDev/PortfolioWeb.git",
+  //   techs: [
+  //     {
+  //       alt: "JavaScript",
+  //       iconUrl: "/assets/logos/skills/js.png"
+  //     },
+  //     {
+  //       alt: "HTML5",
+  //       iconUrl: "/assets/logos/skills/html5.png"
+  //     },
+  //     {
+  //       alt: "CSS3",
+  //       iconUrl: "/assets/logos/skills/css3.png"
+  //     }
+  //   ],
+  //   content: () => {
+  //     return (
+  //       `<div>
+  //         <h2>Portfolio Web (antiguo)</h2>
+  //         <ul>
+  //           <li>1</li>
+  //           <li>2</li>
+  //           <li>3</li>
+  //         </ul>
+  //       </div>`
+  //     );
+  //   }
+  // },
   {
     title: "Burguer::Code",
     description: "Sitio web de hamburguesería",

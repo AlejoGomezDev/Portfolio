@@ -79,13 +79,18 @@
 
 .app-background {
   background:
-    linear-gradient(
+      radial-gradient(500px 500px at 0% 0%, rgba(15, 37, 80, 0.877), transparent 100%),
+     radial-gradient(500px 1500px at 100% 35%, rgba(10, 37, 88, 0.877), transparent 100%),
+     radial-gradient(500px 1500px at 0% 55%, rgba(1, 12, 31, 0.877), transparent 100%),
+
+  linear-gradient(
       180deg,
       #0a1628 0%,
       #081224 35%,
       #060f1f 65%,
       #050d1a 100%
     );
+  
 }
 
 :root {
@@ -119,4 +124,37 @@
 /* Transiciones suaves */
 .transition-gradient {
   transition: background 0.3s ease;
+}
+
+.scrollbar-blue::-webkit-scrollbar {
+  height: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: rgba(4, 29, 88, 0.6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 40, 105, 0.8),
+    rgba(8, 37, 83, 0.9)
+  );
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 40, 105, 0.8),
+    rgba(8, 37, 83, 0.9)
+  );
+}
+
+/* Soporte para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(8, 37, 83, 0.9) rgba(15, 23, 42, 0.6);
 }

@@ -22,7 +22,7 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
           border border-blue-500
           w-[50%] h-full
           transition-all duration-300
-          ${activo ? " bg-linear-to-br from-transparent from-25%  to-blue-500/50 " : " bg-linear-to-br from-transparent to-blue-950/30"}
+          ${activo ? " bg-linear-to-br from-transparent from-25%  to-blue-500/50 " : "bg-custom-gradient"}
         `}
       >
         {/* Logo */}

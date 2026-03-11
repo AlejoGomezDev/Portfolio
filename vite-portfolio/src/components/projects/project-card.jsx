@@ -30,8 +30,7 @@ export function ProjectCard({ project, index }) {
           absolute w-full h-full
           rounded-xl
           overflow-hidden
-          bg-linear-to-br from-transparent from-35% to-blue-950/30
-          border border-blue-800/40
+          bg-custom-gradient
           backdrop-blur
           hover:scale-102
           transition-all duration-300

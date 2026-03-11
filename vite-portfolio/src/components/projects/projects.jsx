@@ -4,7 +4,7 @@ import { ProjectCard } from "./project-card";
 
 export function Projects() {
   return (
-    <div className="flex w-full min-h-dvh  flex-col mb-20 space-y-10  ">
+    <section className="flex w-full min-h-dvh  flex-col mb-20 space-y-10  ">
       <SectionTitle text={"Proyectos"} />
     
     <div className="w-[85%] m-auto grid  grid-cols-[repeat(auto-fit,minmax(25rem,1fr))] gap-6 justify-items-center">
@@ -13,6 +13,6 @@ export function Projects() {
       ))}
     </div>
 
-    </div>
+    </section>
   );
 }

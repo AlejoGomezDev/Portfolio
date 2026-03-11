@@ -158,3 +158,13 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(8, 37, 83, 0.9) rgba(15, 23, 42, 0.6);
 }
+
+.bg-custom-gradient {
+  background: linear-gradient(to bottom right, 
+              transparent 35%, 
+              rgba(23, 37, 84, 0.3) 100%);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  border: 1px oklch(48.8% 0.243 264.376) solid;
+}

@@ -48,7 +48,7 @@ export function ProjectCard({ project, index }) {
             />
           </div>
 
-          <div className="text-center p-4 h-[40%] flex flex-col justify-center gap-4    ">
+          <div className="text-center p-0 2xl:p-4  h-[40%] flex flex-col justify-center 2xl:gap-4    ">
             <h4 className="text-xl font-bold text-white">
               {project.title}
             </h4>

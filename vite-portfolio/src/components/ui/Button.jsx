@@ -8,7 +8,7 @@ export function Button({
 }) {
   return (
     <button
-      className={`bg-gray-600 text-white rounded-full p-2 w-30 h-10 
+      className={`bg-gray-600 text-white rounded-full p-2 w-30 
       transition-all duration-300 ease-in-out hover:-translate-y-1  
       overflow-hidden relative cursor-pointer ${className}`}
       onClick={onClick}

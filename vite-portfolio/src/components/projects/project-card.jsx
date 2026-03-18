@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { CircleArrowLeft, CircleArrowRight, Github } from "lucide-react";
 import  GitHub from "../../assets/logotipos/github-2.svg"
 import GoogleDrive from "../../assets/logotipos/googledrive.svg"
+import { ProjectDetail } from "./project-details";
 
 export function ProjectCard({ project, index }) {
   const [flip, setFlip] = useState(false);
@@ -54,7 +55,7 @@ export function ProjectCard({ project, index }) {
             </h4>
 
             <h5 className="text-lg text-gray-300">
-              {project.description}
+              {project.subtitle}
             </h5>
 
             {project.techs?.length > 0 && (
@@ -98,21 +99,13 @@ export function ProjectCard({ project, index }) {
             backfaceVisibility: "hidden",
           }}
         >
-          <div>
-            <h3 className="text-xl font-bold mb-3 text-blue-400">
-              {project.title}
-            </h3>
-
-            <div
-              className="text-gray-300 text-sm"
-              dangerouslySetInnerHTML={{ __html: project.content() }}
-            />
-          </div>
+           <ProjectDetail
+            title={project.title}
+            description={project.description}
+            features={project.features}
+           />
 
           <div className="flex gap-4 justify-center mt-4 ">
-
-
-
 
             {project.GitHubUrl && (
               <a

@@ -1,14 +1,33 @@
 import { useState } from "react";
 import { Button } from "../ui/Button";
-import { SOCIALDATA } from "../../data/social-data"; // Ajustá la ruta según corresponda
+import emailjs from '@emailjs/browser';
+import { useRef } from "react";
+
+const EmailJsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EmailJsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EmailJsPublicKeyId = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 export function ContactForm() {
+  const form = useRef();
+
   const [formData, setFormData] = useState({
-    nombre: "",
-    apellido: "",
+    name: "",
+    lastname: "",
     email: "",
-    mensaje: "",
+    message: "",
   });
+
+  const [isFormSending, setIsFormSending] = useState(false)
+  const [isFormSended, setIsFormSended] = useState(false)
+
+  const restoreFormData = () => {
+    setFormData({
+      name:"",
+      lastname:"",
+      email:"",
+      message:""
+    })
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,27 +37,44 @@ export function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("Formulario enviado:", formData);
-  };
 
-  // Redes sociales para mostrar en círculos (solo las que son links)
+    setIsFormSending(true)
+
+    try{
+      const response = await emailjs
+        .sendForm(EmailJsServiceId, EmailJsTemplateId, form.current, {
+          publicKey: EmailJsPublicKeyId,
+        })
+      
+
+        console.log("RES", response)
+        setIsFormSending(false)
+        setIsFormSended(true)
+
+    }catch(e){
+      console.error("Error enviando Formulario", e)
+    }finally{
+
+    }
+  };
 
   return (
     <div className="w-full max-w-2xl mx-auto">
       {/* Header con título y descripción */}
-      <div className="mb-8 text-center">
+      <div className="text-center">
         <h3 className="text-3xl font-bold text-blue-500 mb-3">¡Conversemos!</h3>
         <p className="text-gray-300 text-lg">
-          Tenés un proyecto en mente? Completá el formulario y te responderé a
-          la brevedad
+          Completá el formulario y te responderé a
+          la brevedad.
         </p>
       </div>
 
       <form
-        onSubmit={handleSubmit}
+        onSubmit={sendEmail}
         className="flex flex-col gap-6 p-6 rounded-2xl"
+        ref={form}
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="flex flex-col">
@@ -51,11 +87,11 @@ export function ContactForm() {
             <input
               type="text"
               id="nombre"
-              name="nombre"
+              name="name"
               placeholder="Tu nombre"
               value={formData.nombre}
               onChange={handleChange}
-              className="w-full p-3 rounded-lg bg-gray-950/80 border border-gray-800 focus:border-blue-500 focus:outline-none text-white placeholder-gray-500 transition-colors"
+              className={`w-full p-3 rounded-lg bg-gray-950/80 border border-gray-800 focus:border-blue-500 focus:outline-none text-white placeholder-gray-500 transition-colors ${isFormSended || isFormSending ? "pointer-events-none bg-gray-600 opacity-50" : "pointer-events-auto"}`}
               required
             />
           </div>
@@ -70,11 +106,11 @@ export function ContactForm() {
             <input
               type="text"
               id="apellido"
-              name="apellido"
+              name="lastname"
               placeholder="Tu apellido"
               value={formData.apellido}
               onChange={handleChange}
-              className="w-full p-3 rounded-lg bg-gray-950/80 border border-gray-800 focus:border-blue-500 focus:outline-none text-white placeholder-gray-500 transition-colors"
+              className={`w-full p-3 rounded-lg bg-gray-950/80 border border-gray-800 focus:border-blue-500 focus:outline-none text-white placeholder-gray-500 transition-colors ${isFormSended || isFormSending ? "pointer-events-none opacity-50" : "pointer-events-auto"}`}
               required
             />
           </div>
@@ -88,13 +124,13 @@ export function ContactForm() {
             Correo electrónico
           </label>
           <input
-            type="email"
+            type=""
             id="email"
             name="email"
             placeholder="tu@email.com"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-gray-950/80 border border-gray-800 focus:border-blue-500 focus:outline-none text-white placeholder-gray-500 transition-colors"
+            className={`w-full p-3 rounded-lg bg-gray-950/80 border border-gray-800 focus:border-blue-500 focus:outline-none text-white placeholder-gray-500 transition-colors ${isFormSended || isFormSending ? "pointer-events-none opacity-50" : "pointer-events-auto"}`}
             required
           />
         </div>
@@ -108,22 +144,22 @@ export function ContactForm() {
           </label>
           <textarea
             id="mensaje"
-            name="mensaje"
+            name="message"
             placeholder="Contame sobre tu proyecto, idea o consulta..."
             value={formData.mensaje}
             onChange={handleChange}
             rows="6"
-            className="w-full p-4 rounded-lg bg-gray-950/80 border border-gray-800 focus:border-blue-500 focus:outline-none resize-none text-white placeholder-gray-500 transition-colors"
+            className={`w-full p-4 rounded-lg bg-gray-950/80 border border-gray-800 focus:border-blue-500 focus:outline-none resize-none text-white placeholder-gray-500 transition-colors ${isFormSended || isFormSending ? "pointer-events-none opacity-50" : "pointer-events-auto"}`}
             required
           />
         </div>
 
         <div className="flex justify-center ">
           <Button
-            text="Enviar mensaje"
+            text={`${isFormSending ? "Enviando..." : isFormSended ? "Enviado!" : "Enviar"}`}
             animation={true}
             type="submit"
-            className="bg-gradient-secondary w-full sm:w-64 rounded-full p-3 font-semibold text-lg tracking-wide shadow-lg hover:shadow-xl transition-all duration-300"
+            className={` w-full sm:w-64 rounded-full p-3 font-semibold text-lg tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 ${isFormSended || isFormSending ? "pointer-events-none bg-gray-500" : "bg-gradient-secondary "}`}
           />
         </div>
 

@@ -13,7 +13,7 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
 
   return (
     <div
-      className={`w-full transition-all duration-300 flex h-50 rounded-xl overflow-hidden justify-between`}
+      className={`w-full transition-all duration-300 flex h-50 rounded-xl overflow-hidden justify-between gap-8`}
     >
       <div
         className={`
@@ -83,7 +83,7 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
 
       {/* Detalles  */}
 
-      <div className=" w-[48%] overflow-hidden ">
+      <div className=" w-[50%] overflow-hidden ">
         <div
           className="
             backdrop-blur-sm

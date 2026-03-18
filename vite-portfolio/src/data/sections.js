@@ -1,8 +1,7 @@
-import { House, UserRound, BriefcaseBusiness, FileCodeCorner, Mail, List, FolderOpen  } from "lucide-react"
+import { House, UserRound, BriefcaseBusiness, Mail, List, FolderOpen  } from "lucide-react"
 import { Home } from "../components/home/home";
 import { Experience } from "../components/experience/experience";
 import { Projects } from "../components/projects/projects";
-import { Skills } from "../components/skills/skills";
 import { About } from "../components/about/about";
 import { Contact } from "../components/contact/contact"; 
 
@@ -35,7 +34,6 @@ export const SECTIONS = [
     componentToRender: About,
     bgColor: "bg-blue-950" // Azul casi noche (el más oscuro)
   },
-
   {
     id: "contact",
     label: "Contacto",

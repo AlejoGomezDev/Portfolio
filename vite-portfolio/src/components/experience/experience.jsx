@@ -5,10 +5,10 @@ import { EXPERIENCIAS } from "../../data/experience";
 import { ExperienciaLaboralItem } from "./experiencia-laboral-item";
 export function Experience() {
   return (
-    <section className="flex w-full min-h-dvh  overflow-hidden flex-col justify-start space-y-10  mb-20">
+    <div className="flex w-full min-h-dvh  overflow-hidden flex-col justify-start space-y-10  mb-20">
       <SectionTitle text={"Experiencia"}/>
     
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-8">
         {EXPERIENCIAS.map((exp) => (
           <ExperienciaLaboralItem 
             key={exp.id}
@@ -19,6 +19,6 @@ export function Experience() {
 
       </div>
 
-    </section>
+    </div>
   );
 }

@@ -30,12 +30,12 @@ export function AboutMeText({ className = "" }) {
       "Visual Studio": "#5C2D91",
     };
 
-    return colors[skillName] || "#6366F1"; // Color por defecto (indigo)
+    return colors[skillName] || "#6366F1"; 
   };
   
 
   return (
-    <div className={`${className} flex flex-col gap-6 `}>
+    <div className={`${className} flex flex-col gap-8 `}>
       <div className="w-full min-w-full prose prose-invert text-lg  rounded-xl p-4  bg-custom-gradient">
         <p>
           Soy{" "}

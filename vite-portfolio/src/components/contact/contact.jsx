@@ -6,30 +6,16 @@ import { ContactForm } from "./contact-form.jsx";
 
 export function Contact() {
   return (
-    <section className="space-y-10 mb-20">
+    <div className="space-y-10 mb-20">
       <SectionTitle text={"Contacto"} />
 
-        {/* <div className="w-[40%] ">
-          <div className="flex flex-col justify-between h-full gap-4">
-            {SOCIALDATA.map((link, index) => (
-              <ContactLink
-                key={`${link.alt}-${index}`}
-                url={link.url}
-                imgUrl={link.imgUrl}
-                alt={link.alt}
-                text={link.text}
-                target={link.target || "_self"}
-              />
-            ))}
-
-          </div>
-        </div> */}
+       
 
         <div className="w-[50%] m-auto p-6 bg-custom-gradient-important rounded-xl">
           <ContactForm />
 
           {/* Redes sociales en círculos */}
-      <div className="flex justify-center gap-4 mb-8">
+      <div className="flex justify-center gap-8 ">
         {SOCIALDATA.map((link, index) => (
           <a
             key={`social-circle-${index}`}
@@ -55,6 +41,6 @@ export function Contact() {
         ))}
       </div>
         </div>
-    </section>
+    </div>
   );
 }

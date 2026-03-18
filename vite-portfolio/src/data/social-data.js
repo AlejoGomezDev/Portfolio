@@ -1,10 +1,5 @@
 export const SOCIALDATA = [
-  {
-    "url": "mailto:alejongomez@gmail.com",
-    "imgUrl": "/assets/Imagenes/Redes/email.png",
-    "alt": "Email",
-    "text": "alejongomez@gmail.com",
-  },
+
   {
     "url": "https://www.linkedin.com/in/alejoGomez04/",
     "imgUrl": "/assets/Imagenes/Redes/linkedIn.png",

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { EllipsisIcon } from "lucide-react";
 import { useScroll } from "framer-motion";
 import { Button } from "./components/ui/Button";
+import { motion } from "framer-motion";
 
 function App() {
   const [selectedSection, setSelectedSection] = useState(SECTIONS[0].id);
@@ -118,23 +119,25 @@ const handleNavbarMouseEnter = () => {
         </div>
       </header>
 
-      <main
-        className="flex flex-col "
+    <main className="flex flex-col">
+  {SECTIONS.map((section) => {
+    const Component = section.componentToRender;
+    return (
+      <motion.section
+        key={section.id}
+        id={section.id}
+        className="w-[80%] mx-auto min-h-dvh gap-2 mb-2 pt-4"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true}} // Aparece cuando está a 100px de entrar
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        {SECTIONS.map((section) => {
-          const Component = section.componentToRender;
-          return (
-            <section
-              key={section.id}
-              id={section.id}
-              className={`w-[80%] mx-auto min-h-dvh gap-2 mb-2 pt-4 `}
-            >
-              <h2 className="sr-only">{section.label}</h2>
-              <Component />
-            </section>
-          );
-        })}
-      </main>
+        <h2 className="sr-only">{section.label}</h2>
+        <Component />
+      </motion.section>
+    );
+  })}
+</main>
 
       {/* Opcional: Footer */}
       <footer className="sr-only">

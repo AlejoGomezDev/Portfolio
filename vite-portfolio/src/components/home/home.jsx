@@ -19,12 +19,12 @@ export function Home() {
   ];
 
   return (
-    <section className="min-h-dvh flex items-center">
+    <div className="min-h-dvh flex items-center">
       <div className="w-full flex justify-between items-center">
         {/* LEFT */}
         <motion.div
-          initial={{ x: -600, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ opacity: 0}}
+          animate={{ opacity: 1}}
           transition={{ ease: "easeIn", duration: 0.7 }}
           className="max-w-xl 2xl:max-w-2xl flex flex-col justify-evenly h-110 "
         >
@@ -85,8 +85,8 @@ export function Home() {
 
         {/* RIGHT */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0}}
+          animate={{ opacity: 1 }}
           transition={{ ease: "easeIn", duration: 0.7 }}
           className="flex justify-end w-full max-w-xl"
         >
@@ -95,6 +95,6 @@ export function Home() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }

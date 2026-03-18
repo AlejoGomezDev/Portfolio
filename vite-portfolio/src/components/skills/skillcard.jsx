@@ -10,7 +10,6 @@ export function  SkillCard  ({ skill, lightColor }) {
         boxShadow: isHovered 
           ? `0 0 20px ${lightColor}, 0 0 20px ${lightColor}` 
           : ``,
-        transform: isHovered ? 'scale(1.03)' : 'scale(1)',
         filter: isHovered ? 'brightness(1.1)' : 'brightness(1)'
       }}
       onMouseEnter={() => setIsHovered(true)}

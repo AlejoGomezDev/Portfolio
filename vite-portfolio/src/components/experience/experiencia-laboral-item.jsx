@@ -28,16 +28,21 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
         {/* Logo */}
         <div className="h-full w-40 rounded-lg overflow-hidden bg-transparent shrink-0">
           {experiencia.imagen ? (
-            <img
-              src={experiencia.imagen}
-              alt={`Logo ${experiencia.empresa}`}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.style.display = "none";
-                e.target.parentElement.innerHTML = `<div class=" h-full w-full flex bg-linear-to-br from-blue-600 to-purple-600  items-center justify-center text-white font-bold text-xl">${experiencia.empresa.charAt(0)}</div>`;
-              }}
-            />
+            <a
+            target="_blank"
+              href={experiencia.urlEmpresa}>
+                <img
+                  src={experiencia.imagen}
+                  alt={`Logo ${experiencia.empresa}`}
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.style.display = "none";
+                    e.target.parentElement.innerHTML = `<div class=" h-full w-full flex bg-linear-to-br from-blue-600 to-purple-600  items-center justify-center text-white font-bold text-xl">${experiencia.empresa.charAt(0)}</div>`;
+                  }}
+                />
+
+            </a>
           ) : (
             <div className="w-full h-full bg-linear-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
               {experiencia.empresa.charAt(0)}

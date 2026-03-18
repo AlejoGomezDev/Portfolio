@@ -7,7 +7,7 @@ export const EDUCACION = [
     titulo: "Técnico Universitario en Programación",
     fecha: "2025",
     estado: "egresado",
-    imagen: "/assets/educacion/utn.png",
+    imagen: "/assets/Imagenes/Educacion/utn.png",
     imagenAlt: "UTN FRGP",
     descripcion: "Formación universitaria en programación con enfoque en desarrollo de software, algoritmos y estructuras de datos.",
     tecnologias: ["Java", "Python", "SQL", "C", "JavaScript"]
@@ -19,7 +19,7 @@ export const EDUCACION = [
     titulo: "Full Stack Web Developer with Node.js",
     fecha: "2024",
     estado: "aprobado",
-    imagen: "/assets/educacion/codo.png",
+    imagen: "/assets/Imagenes/Educacion/codo.png",
     imagenAlt: "Codo a Codo",
     descripcion: "Programa intensivo de desarrollo web full stack con enfoque en JavaScript y Node.js.",
 
@@ -32,7 +32,7 @@ export const EDUCACION = [
     titulo: "Web Developer Basics Level 02",
     fecha: "2023",
     estado: "aprobado",
-    imagen: "/assets/educacion/digi.png",
+    imagen: "/assets/Imagenes/Educacion/digi.png",
     imagenAlt: "Digital House Frontend",
     descripcion: "Curso intermedio de desarrollo web con proyectos prácticos.",
     tecnologias: ["HTML", "CSS", "JavaScript", "APIs REST"]
@@ -44,7 +44,7 @@ export const EDUCACION = [
     titulo: "Web Developer Basics Level 01",
     fecha: "2023",
     estado: "aprobado",
-    imagen: "/assets/educacion/digi.png",
+    imagen: "/assets/Imagenes/Educacion/digi.png",
     imagenAlt: "Digital House Frontend",
     descripcion: "Curso fundamental de desarrollo web introduciendo conceptos básicos.",
 
@@ -57,7 +57,7 @@ export const EDUCACION = [
     titulo: "Licenciado en Sistemas",
     fecha: "2026",
     estado: "en curso",
-    imagen: "/assets/educacion/UNGS.jpg",
+    imagen: "/assets/Imagenes/Educacion/UNGS.jpg",
     imagenAlt: "UNGS",
     descripcion: "Formación universitaria en programación con enfoque en desarrollo de software, algoritmos y estructuras de datos.",
     tecnologias: ["Java", "Python", "SQL", "C", "JavaScript"]

@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     title: "Portfolio Web",
     description: "Mi (antiguo) portfolio web",
-    imageUrl: "/assets/projects-images/PortfolioWeb2.png",
+    imageUrl: "/assets/Imagenes/Proyectos/PortfolioWeb2.png",
     driveUrl: "https://drive.google.com/drive/folders/13NMxndRt0_SmGCm81oToAhaJUNfxUgJI?usp=sharing",
     GitHubUrl: "https://github.com/AlejoGomezDev/Portfolio-Astro-React.git",
     techs: [
@@ -35,7 +35,7 @@ export const PROJECTS = [
   {
     title: "Banco Honse",
     description: "Sistema de gestión de Banco",
-    imageUrl: "/assets/projects-images/bancoHonse.png",
+    imageUrl: "/assets/Imagenes/Proyectos/bancoHonse.png",
     driveUrl: "https://drive.google.com/drive/folders/1t8DK7pkJbPGbzHIlmLR53qEWtzNX_Gxe?usp=sharing",
     GitHubUrl: "https://github.com/AlejoGomezDev/BancoHonse",
     techs: [
@@ -68,7 +68,7 @@ export const PROJECTS = [
   {
     title: "Reactive Search",
     description: "Biblioteca de Peliculas Reactiva",
-    imageUrl: "/assets/projects-images/ReactiveSearch2.png",
+    imageUrl: "/assets/Imagenes/Proyectos/ReactiveSearch2.png",
     driveUrl: "https://drive.google.com/drive/folders/1rJDNOde9oeIJnAYOWgGE047xEivRVy7K?usp=sharing",
     GitHubUrl: "https://github.com/AlejoGomezDev/ReactiveSearch.git",
     techs: [
@@ -105,7 +105,7 @@ export const PROJECTS = [
   {
     title: "The Chained Dungeon",
     description: "Juego de mazmorras",
-    imageUrl: "/assets/projects-images/TheCD.png",
+    imageUrl: "/assets/Imagenes/Proyectos/TheCD.png",
     driveUrl: "https://drive.google.com/drive/folders/1TbB_2g_o13Wu9z8yuZpmMJQFqrDO1rDR?usp=sharing",
     GitHubUrl: "https://github.com/AlejoGomezDev/TheChainedDungeon.git",
     techs: [
@@ -134,7 +134,7 @@ export const PROJECTS = [
   {
     title: "Gestión para Clínica",
     description: "Sistema de gestión",
-    imageUrl: "/assets/projects-images/Clinica1.png",
+    imageUrl: "/assets/Imagenes/Proyectos/Clinica1.png",
     driveUrl: "https://drive.google.com/drive/folders/1cqnZapKfmqFRs4z3m3U-GHEs79RyamSz?usp=sharing",
     GitHubUrl: "https://github.com/AlejoGomezDev/SistemaGestionClinica.git",
     techs: [
@@ -170,7 +170,7 @@ export const PROJECTS = [
   {
     title: "CodeFlix",
     description: "Biblioteca de Peliculas",
-    imageUrl: "/assets/projects-images/CodeFlix1.png",
+    imageUrl: "/assets/Imagenes/Proyectos/CodeFlix1.png",
     driveUrl: "https://drive.google.com/drive/folders/1VgIciZZLKRH8c-jHnSiDECDPHDSvqFil?usp=sharing",
     GitHubUrl: "https://github.com/AlejoGomezDev/CodeFlix.git",
     techs: [
@@ -208,7 +208,7 @@ export const PROJECTS = [
   // {
   //   title: "Portfolio Web (antiguo)",
   //   description: "Mi (antiguo) portfolio web",
-  //   imageUrl: "/assets/projects-images/PortfolioWeb1.png",
+  //   imageUrl: "/assets/Imagenes/Proyectos/PortfolioWeb1.png",
   //   driveUrl: "https://drive.google.com/drive/folders/1AwEIYhncSpPz7xzt76bIfM9K3ITeRKYh?usp=sharing",
   //   GitHubUrl: "https://github.com/AlejoGomezDev/PortfolioWeb.git",
   //   techs: [
@@ -241,7 +241,7 @@ export const PROJECTS = [
   {
     title: "Burguer::Code",
     description: "Sitio web de hamburguesería",
-    imageUrl: "/assets/projects-images/BurguerCode1.png",
+    imageUrl: "/assets/Imagenes/Proyectos/BurguerCode1.png",
     driveUrl: "https://drive.google.com/drive/folders/1AhBDPoYYdZZByxVOd6jMHMNGDZENAHst?usp=sharing",
     GitHubUrl: "https://github.com/AlejoGomezDev/Burguer--Code.git",
     techs: [

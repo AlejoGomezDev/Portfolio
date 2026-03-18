@@ -9,7 +9,7 @@ export function AboutEducation(
 
     return (
         <section className={`text-center h-full ${className} `}>
-            <div className="space-y-5">
+            <div className="space-y-6">
                 {
                     EDUCACION.filter(e => e.tipo === "academica").sort((a, b) => Number(b.fecha) - Number(a.fecha)).map((item) =>
                     (

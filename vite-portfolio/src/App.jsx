@@ -72,7 +72,11 @@ const handleNavbarMouseEnter = () => {
 
   const RightNavbarButton = () => {
     return (
-     <Button className="bg-gradient-secondary italic w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0" text="¡Hablemos!" animation={true}/>
+     <Button className="bg-gradient-secondary italic w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0" text="¡Hablemos!" animation={true}  onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }/>
     );
   };
 

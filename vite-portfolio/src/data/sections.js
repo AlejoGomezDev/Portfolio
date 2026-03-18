@@ -35,6 +35,7 @@ export const SECTIONS = [
     componentToRender: About,
     bgColor: "bg-blue-950" // Azul casi noche (el más oscuro)
   },
+
   {
     id: "contact",
     label: "Contacto",

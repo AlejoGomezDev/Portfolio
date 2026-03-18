@@ -169,6 +169,16 @@
   border: 1px oklch(48.8% 0.243 264.376) solid;
 }
 
+.bg-custom-gradient-dark {
+  background: linear-gradient(to bottom right, 
+              rgba(0, 1, 15, 0.3) 35%, 
+              rgba(0, 1, 15, 0.3) 100%);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  border: 1px oklch(48.8% 0.243 264.376) solid;
+}
+
 
 .bg-custom-gradient-important {
 background: linear-gradient(to bottom right, transparent 25%, rgba(59, 130, 246, 0.5));

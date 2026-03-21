@@ -126,7 +126,7 @@ const handleNavbarMouseEnter = () => {
       <motion.section
         key={section.id}
         id={section.id}
-        className="w-[80%] mx-auto min-h-dvh gap-2 mb-2 pt-4"
+        className="w-[95%] sm:w-[80%] mx-auto min-h-dvh gap-2 mb-2 pt-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true}} // Aparece cuando está a 100px de entrar

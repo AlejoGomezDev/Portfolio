@@ -6,6 +6,7 @@ import { EllipsisIcon } from "lucide-react";
 import { useScroll } from "framer-motion";
 import { Button } from "./components/ui/Button";
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 function App() {
   const [selectedSection, setSelectedSection] = useState(SECTIONS[0].id);
@@ -14,52 +15,62 @@ function App() {
 
   const { scrollY } = useScroll();
 
-useEffect(() => {
-  const unsubscribe = scrollY.on("change", (current) => {
-    const scrollingDown = current > lastScrollTop.current;
-    const isNearTop = current <= 20;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    if (isNearTop) {
-      setIsNavbarHidden(false);
-    } 
-    else if (scrollingDown) {
-      setIsNavbarHidden(true);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = scrollY.on("change", (current) => {
+      const scrollingDown = current > lastScrollTop.current;
+      const isNearTop = current <= 20;
+
+      if (isNearTop) {
+        setIsNavbarHidden(false);
+      } else if (scrollingDown) {
+        setIsNavbarHidden(true);
+      }
+
+      lastScrollTop.current = current;
+    });
+
+    return unsubscribe;
+  }, [scrollY]);
+
+  const handleNavbarMouseLeave = () => {
+    const isNearTop = lastScrollTop.current <= 20;
+
+    if (isNearTop) return;
+
+    setIsNavbarHidden(true);
+  };
+
+  const handleNavbarClick = (e, id) => {
+    e.preventDefault();
+
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
 
-    lastScrollTop.current = current;
-  });
+    // Solo ocultar si cambia de sección
+    if (id !== selectedSection) {
+      setSelectedSection(id);
+      setIsNavbarHidden(true);
+      window.history.pushState({}, "", `#${id}`);
+    }
+  };
 
-  return unsubscribe;
-}, [scrollY]);
-
-const handleNavbarMouseLeave = () => {
-  const isNearTop = lastScrollTop.current <= 20;
-
-  if (isNearTop) return;
-
-  setIsNavbarHidden(true);
-};
-
-const handleNavbarClick = (e, id) => {
-  e.preventDefault();
-
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-
-  // Solo ocultar si cambia de sección
-  if (id !== selectedSection) {
-    setSelectedSection(id);
-    setIsNavbarHidden(true);
-    window.history.pushState({}, "", `#${id}`);
-  }
-
-};
-
-const handleNavbarMouseEnter = () => {
-  setIsNavbarHidden(false);
-};
+  const handleNavbarMouseEnter = () => {
+    setIsNavbarHidden(false);
+  };
 
   const Logo = () => {
     return (
@@ -73,14 +84,18 @@ const handleNavbarMouseEnter = () => {
 
   const RightNavbarButton = () => {
     return (
-     <Button className="bg-gradient-secondary italic w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0" text="¡Hablemos!" animation={true}  onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }/>
+      <Button
+        className="bg-gradient-secondary italic w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0"
+        text="¡Hablemos!"
+        animation={true}
+        onClick={() =>
+          document
+            .getElementById("contact")
+            ?.scrollIntoView({ behavior: "smooth" })
+        }
+      />
     );
   };
-
 
   return (
     <div className="min-w-full h-full text-gray-200 flex flex-col font-inter scroll-smooth app-background">
@@ -89,9 +104,11 @@ const handleNavbarMouseEnter = () => {
         <Navbar
           sections={SECTIONS}
           navbarClassName={`w-[80%] fixed top-2 left-0 right-0 m-auto bg-transparent rounded-full shrink-0 backdrop-blur-xl border border-gray-800 h-[5em] font-normal transition-all duration-300 transform ${
-            isNavbarHidden
-              ? "-translate-y-[120%] opacity-0 pointer-events-none"
-              : "translate-y-0 opacity-100"
+            isMobile
+              ? "hidden"
+              : isNavbarHidden
+                ? "-translate-y-[120%] opacity-0 pointer-events-none"
+                : "translate-y-0 opacity-100"
           }`}
           selectedClassName="text-gradient-primary"
           selectedSection={selectedSection}
@@ -117,31 +134,66 @@ const handleNavbarMouseEnter = () => {
             <EllipsisIcon className="h-5" />
           </div>
         </div>
+
+        {isMobile && (
+          <div className="fixed top-4 right-4 z-1000">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg backdrop-blur-xl border border-gray-800"
+            >
+              {isMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
+        )}
+
+        {isMobile && isMenuOpen && (
+          <div className="fixed inset-0 z-999  flex flex-col h-min bg-gray-950/60 pt-20 justify-start backdrop-blur-xl gap-4 p-4">
+
+            
+            {SECTIONS.map((section) => {
+              const Icon = section.icon;
+
+              return (
+                <button
+                  key={section.id}
+                  onClick={(e) => {
+                    handleNavbarClick(e, section.id);
+                    setIsMenuOpen(false);
+                  }}
+                  className="p-4 flex w-full bg-blue-950/50 justify-center rounded-xl text-center items-center gap-3 text-xl text-gray-200"
+                >
+                  <Icon />
+                  {section.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
       </header>
 
-    <main className="flex flex-col">
-  {SECTIONS.map((section) => {
-    const Component = section.componentToRender;
-    return (
-      <motion.section
-        key={section.id}
-        id={section.id}
-        className="w-[95%] sm:w-[80%] mx-auto min-h-dvh gap-2 mb-2 pt-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true}} // Aparece cuando está a 100px de entrar
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <h2 className="sr-only">{section.label}</h2>
-        <Component />
-      </motion.section>
-    );
-  })}
-</main>
+      <main className="flex flex-col">
+        {SECTIONS.map((section) => {
+          const Component = section.componentToRender;
+          return (
+            <motion.section
+              key={section.id}
+              id={section.id}
+              className="w-[95%] sm:w-[80%] mx-auto min-h-dvh gap-2 mb-2 pt-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <h2 className="sr-only">{section.label}</h2>
+              <Component />
+            </motion.section>
+          );
+        })}
+      </main>
 
       {/* Opcional: Footer */}
-      <footer className="sr-only">
-        <p>© 2024 Alejo Gomez. Todos los derechos reservados.</p>
+      <footer className="bg-gray-900 text-sm ">
+        <p>© 2026 AlejoGomezDev</p>
       </footer>
     </div>
   );

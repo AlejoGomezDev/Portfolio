@@ -13,21 +13,21 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
 
   return (
     <div
-      className={`w-full transition-all duration-300 flex flex-col lg:flex-row gap-4 sm:gap-6`}
+      className={`w-full transition-all duration-300 flex flex-col xl:flex-row gap-4 sm:gap-6`}
     >
       {/* Tarjeta principal */}
       <div
         className={`
-          rounded-xl shadow-lg 
+          rounded-xl shadow-xl 
           flex flex-col sm:flex-row p-4 sm:p-4 items-center gap-4
           border border-blue-500
-          w-full lg:w-[50%]
+          w-full xl:w-[50%]
           transition-all duration-300
           ${activo ? "bg-custom-gradient-important" : "bg-custom-gradient"}
         `}
       >
         {/* Logo - Mobile first */}
-        <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-lg overflow-hidden bg-transparent shrink-0">
+        <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-xl overflow-hidden bg-transparent shrink-0">
           {experiencia.imagen ? (
             <a
               target="_blank"
@@ -87,7 +87,7 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
           {/* Botón toggle para mobile */}
           <button
             onClick={() => setMostrarDetalle(!mostrarDetalle)}
-            className="lg:hidden flex items-center justify-between w-full mt-2 py-2 px-3 bg-blue-500/10 rounded-lg hover:bg-blue-500/20 transition-colors"
+            className="xl:hidden flex items-center justify-between w-full mt-2 py-2 px-3 bg-blue-500/10 rounded-xl hover:bg-blue-500/20 transition-colors"
           >
             <span className="text-sm text-blue-400">
               {mostrarDetalle ? "Ocultar detalles" : "Ver detalles"}
@@ -104,11 +104,11 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
       {/* Detalles */}
       <div
         className={`
-        w-full  lg:w-[50%] lg:flex-1
+        w-full  xl:w-[50%] xl:flex-1
         transition-all duration-300 ease-in-out
         overflow-hidden
         ${mostrarDetalle ? "max-h-500 opacity-100" : "max-h-0 opacity-0"}
-        lg:max-h-50 lg:opacity-100
+        xl:max-h-50 xl:opacity-100
       `}
       >
         <div
@@ -119,7 +119,7 @@ export const ExperienciaLaboralItem = ({ experiencia, activo = false }) => {
             shadow-2xl
             transform transition-all duration-500
             overflow-y-auto
-            max-h-100 sm:max-h-125 lg:max-h-full
+            max-h-100 sm:max-h-125 xl:max-h-full
           "
         >
           <div className="space-y-4">

@@ -16,7 +16,7 @@ export function AboutMeText({ className = "" }) {
       Bootstrap: "#7952B3",
       Tailwind: "#06B6D4",
       "Node.js": "#339933",
-      Express: "#000000",
+      Express: "#ffffff",
       ".NET": "#512BD4",
       "SQL Server": "#CC2927",
       MySQL: "#4479A1",
@@ -55,13 +55,11 @@ export function AboutMeText({ className = "" }) {
           Actualmente me desempeño como{" "}
           <span className="font-bold">
             desarrollador de software en Sarsy SRL
-          </span>
-          , mientras continúo mis estudios cursando una{" "}
-          <span className="font-bold">Licenciatura en Sistemas</span>.
+          </span>.
         </p>
       </div>
 
-      <div className=" p-4 w-full  items-center h-full rounded-xl pl-9   grid grid-cols-[repeat(auto-fit,minmax(6rem,1fr))] gap-4">
+      <div className=" p-4 w-full items-center h-full rounded-xl  grid grid-cols-[repeat(auto-fit,minmax(5rem,1fr))] gap-4 pl-6 sm:pl-4">
           {
             SKILLS.map((skill, index) => (
               <SkillCard

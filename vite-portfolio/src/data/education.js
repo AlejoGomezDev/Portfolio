@@ -50,16 +50,16 @@ export const EDUCACION = [
 
     tecnologias: ["HTML", "CSS", "JavaScript"]
   },
-{
-    id: 5,
-    tipo: "academica",
-    institucion: "Universidad Nacional General Sarmiento",
-    titulo: "Licenciado en Sistemas",
-    fecha: "2026",
-    estado: "en curso",
-    imagen: "/assets/Imagenes/Educacion/UNGS.jpg",
-    imagenAlt: "UNGS",
-    descripcion: "Formación universitaria en programación con enfoque en desarrollo de software, algoritmos y estructuras de datos.",
-    tecnologias: ["Java", "Python", "SQL", "C", "JavaScript"]
-  },
+// {
+//     id: 5,
+//     tipo: "academica",
+//     institucion: "Universidad Nacional General Sarmiento",
+//     titulo: "Licenciado en Sistemas",
+//     fecha: "2026",
+//     estado: "en curso",
+//     imagen: "/assets/Imagenes/Educacion/UNGS.jpg",
+//     imagenAlt: "UNGS",
+//     descripcion: "Formación universitaria en programación con enfoque en desarrollo de software, algoritmos y estructuras de datos.",
+//     tecnologias: ["Java", "Python", "SQL", "C", "JavaScript"]
+//   },
 ];

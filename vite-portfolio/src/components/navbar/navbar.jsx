@@ -43,14 +43,14 @@ const defaultHandleClick  = (e, id) => {
 
       onMouseLeave={onMouseLeave}
     >
-      <div className="flex h-full w-[90%] m-auto gap-30 " >
+      <div className="flex h-full w-[95%] m-auto justify-evenly gap-10 xl:gap-15 " >
         {logo && (
-          <div className="flex h-10  items-center my-auto justify-center ml-0">
+          <div className="flex h-10 scale-80 xl:scale-100 items-center my-auto justify-center ml-0">
             {logo}
           </div>
         )}
 
-        <ul className="flex flex-1 max-w-[50%] m-auto h-full  justify-around relative">
+        <ul className="flex flex-1 w-[80%] m-auto h-full  justify-around relative gap-4 text-sm xl:text-lg">
           {sections.map((item) => (
             <li
               className={`h-full flex w-full relative cursor-pointer ${
@@ -78,7 +78,7 @@ const defaultHandleClick  = (e, id) => {
         </ul>
 
         {rightButton && (
-          <div className=" mr-0 flex items-center ">{rightButton}</div>
+          <div className=" mr-0 scale-80 xl:scale-100 flex items-center ">{rightButton}</div>
         )}
       </div>
     </motion.nav>

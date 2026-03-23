@@ -11,7 +11,7 @@ export function Contact() {
 
        
 
-        <div className="w-[50%] m-auto p-6 bg-custom-gradient-important rounded-xl">
+        <div className="w-full lg:w-[75%] xl:w-[55%] 2xl:w-[50%] m-auto p-2 bg-custom-gradient-important rounded-xl">
           <ContactForm />
 
           {/* Redes sociales en círculos */}

@@ -5,18 +5,17 @@ import { AboutEducation } from "./about-education";
 import { SkillsContainer } from "./skills-container";
 export function About() {
   return (
-    <div className="w-full min-h-dvh mb-20 flex flex-col space-y-10">
+    <div className="w-full min-h-dvh mb-20 flex flex-col  space-y-10">
       <SectionTitle text={"Sobre Mí"} />
 
-      <div className="w-full  flex gap-8 flex-col  max-h-[85%] ">
-          <div className="w-full rounded-xl flex gap-8">
-            <AboutMeText className="w-[60%]"/>
-            <AboutEducation className="w-[40%]"/>
+
+          <div className="w-full rounded-xl flex flex-col gap-8  xl:flex-row ">
+            <AboutMeText className="w-full xl:w-[50%] "/>
+            <AboutEducation className="w-full xl:w-[50%]  "/>
           </div>  
 
-      </div>
 
-          {/* <SkillsContainer/> */}
+
 
     </div>
   );

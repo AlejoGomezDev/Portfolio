@@ -31,7 +31,7 @@ export function  EducationItem  ({ item }) {
   return (
     <div className={`rounded-xl p-2 shadow-lg ${item.tipo === "academica" ? "bg-custom-gradient-important" : "bg-custom-gradient"}`}>
       <div className="flex flex-col sm:flex-row gap-4">
-        <div className="shrink-0 w-[20%] m-auto">
+        <div className="shrink-0 w-[20%] lg:w-[15%] xl:w-[20%] m-auto">
           <img 
             src={item.imagen} 
             alt={item.imagenAlt}
@@ -41,23 +41,20 @@ export function  EducationItem  ({ item }) {
 
         <div className="grow space-y-2 text-left">
        
-            <h4 className="text-xl sm:text-lg font-bold text-white">
+            <h4 className="text-md sm:text-lg font-bold text-white">
               {item.titulo}
             </h4>
             
         
-          <p className="text-md text-gray-400 ">
+          <p className="text-sm text-gray-400 ">
             {item.institucion}
           </p>
 
-            <div className="flex items-center gap-2 ">
+            <div className="flex items-center gap-2 w-[50%]">
                 <span className={`rounded-full text-sm  py-1 px-3 flex justify-center ${getEstadoStyles(item.estado)}`}>
-                {getEstadoTexto(item.estado)}
+                {getEstadoTexto(item.estado)} {item.fecha}
+             
                 </span>
-            
-            <p className="text-gray-400 flex items-center ">
-                {item.fecha}
-            </p>
 
             </div>
 

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import linkedIn from "../../assets/logotipos/linkedin.svg";
 import GitHub from "../../assets/logotipos/github.svg";
 import { Button } from "../ui/Button";
+import ImagenPersonal from "../../../public/assets/Imagenes/Personal/in.jpg"
 
 export function Home() {
   const socialLinks = [
@@ -90,11 +91,16 @@ export function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeIn", duration: 0.7 }}
-          className="flex justify-center lg:justify-end w-full lg:max-w-xl mb-6 lg:mb-0"
+          className="flex justify-center lg:justify-end w-full lg:max-w-xl mb-6 lg:mb-0 "
         >
-          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 xl:w-80 xl:h-80 2xl:w-105 2xl:h-105 bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-            <h4 className="text-white font-bold">Logo acá</h4>
-          </div>
+          <a 
+            href="https://linktr.ee/AlejoNicolasGomez"
+            target="_blank"
+            className="overflow-hidden w-48  sm:w-64  md:w-72 lg: lg:w-80 xl:w-100 2xl:w-120 shadow-xl shadow-blue-500/60 aspect-square bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center hover:-translate-y-2 transition-all duration-300">
+
+            <img src={ImagenPersonal} className="scale-120 rounded-full w-full"/>
+          </a>
+          
         </motion.div>
       </div>
     </div>

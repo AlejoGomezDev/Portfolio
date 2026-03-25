@@ -124,7 +124,7 @@ function App() {
 
         <div
           className={`fixed top-0 h-[1.5em]  w-[15%]  m-auto left-0 right-0 transition-all duration-300 z-999  ${
-            isNavbarHidden
+            isNavbarHidden && !isMobile
               ? "opacity-100 translate-y-0"
               : "opacity-100 -translate-y-20 pointer-events-none"
           }`}
@@ -160,9 +160,8 @@ function App() {
                     handleNavbarClick(e, section.id);
                     setIsMenuOpen(false);
                   }}
-                  className="p-4 flex w-full bg-blue-950/50 justify-center rounded-xl text-center items-center gap-3 text-xl text-gray-200"
+                  className="p-2 flex w-full bg-blue-950/20 justify-center rounded-xl border-blue-700 text-center items-center gap-1 text-md text-gray-200"
                 >
-                  <Icon />
                   {section.label}
                 </button>
               );

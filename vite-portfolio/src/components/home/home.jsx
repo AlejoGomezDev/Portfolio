@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import linkedIn from "../../assets/logotipos/linkedin.svg";
 import GitHub from "../../assets/logotipos/github.svg";
 import { Button } from "../ui/Button";
-import ImagenPersonal from "../../../public/assets/Imagenes/Personal/in.jpg"
+import ImagenPersonal from "../../assets/Imagenes/Personal/in.jpg"
 
 export function Home() {
   const socialLinks = [

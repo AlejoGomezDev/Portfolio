@@ -5,7 +5,7 @@
 :root {
   --main-background: rgb(34, 52, 77);
   --navbar-height: 25em;
-  --gradient-primary: linear-gradient(90deg,rgb(0, 195, 255)0%, rgb(0, 132, 255) 100%);
+  --gradient-primary: linear-gradient(90deg,rgb(0, 195, 255) 0%, rgb(0, 132, 255) 100%);
   --gradient-secondary: linear-gradient(90deg,rgb(204, 150, 34) 0%, rgb(204, 74, 45) 100%);
 }
 
@@ -61,6 +61,7 @@
 .text-gradient-primary {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }

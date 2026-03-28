@@ -7,7 +7,7 @@ import { useScroll } from "framer-motion";
 import { Button } from "./components/ui/Button";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
+import { Anchor } from "./components/ui/Anchor";
 function App() {
   const [selectedSection, setSelectedSection] = useState(SECTIONS[0].id);
   const [isNavbarHidden, setIsNavbarHidden] = useState(false);
@@ -84,15 +84,20 @@ function App() {
 
   const RightNavbarButton = () => {
     return (
-      <Button
+      <Anchor
         className="bg-gradient-secondary italic w-10 h-10 rounded-md hover:brightness-90 hover:translate-y-0"
         text="¡Hablemos!"
         animation={true}
-        onClick={() =>
+        onClick={(e) => 
+        {
+          e.preventDefault()
           document
             .getElementById("contact")
             ?.scrollIntoView({ behavior: "smooth" })
+
         }
+        }
+        href=""
       />
     );
   };
@@ -101,6 +106,7 @@ function App() {
     <div className="min-w-full h-full text-gray-200 flex flex-col font-inter scroll-smooth app-background">
       {/* Header con el navbar */}
       <header className="relative">
+
         <Navbar
           sections={SECTIONS}
           navbarClassName={`w-[80%] fixed top-2 left-0 right-0 m-auto bg-transparent rounded-full shrink-0 backdrop-blur-xl border border-gray-800 h-[5em] font-normal transition-all duration-300 transform ${
@@ -135,39 +141,66 @@ function App() {
           </div>
         </div>
 
-        {isMobile && (
-          <div className="fixed top-4 right-4 z-1000">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg backdrop-blur-xl border border-gray-800"
-            >
-              {isMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-        )}
+{isMobile && (
+  <div className="fixed top-4 right-4 z-1000">
+    <button
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
+      className="p-2 rounded-lg backdrop-blur-xl border border-gray-800 transition-transform duration-300 hover:scale-105"
+      style={{
+        transform: isMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)'
+      }}
+    >
+      {isMenuOpen ? <X /> : <Menu />}
+    </button>
+  </div>
+)}
 
-        {isMobile && isMenuOpen && (
-          <div className="fixed inset-0 z-999  flex flex-col h-min bg-gray-950/60 pt-20 justify-start backdrop-blur-xl gap-4 p-4">
+{isMobile && (
+  <div 
+    className={`fixed inset-0 z-999 flex flex-col h-min pt-20 justify-start gap-4 p-4 transition-all duration-300 ease-in-out ${
+      isMenuOpen 
+        ? 'opacity-100 translate-y-0 visible' 
+        : 'opacity-0 -translate-y-full invisible'
+    }`}
+    style={{
+      background: 'rgba(17, 24, 39, 0.6)',
+      backdropFilter: 'blur(12px)'
+    }}
+  >
+    {SECTIONS.map((section) => {
+      const Icon = section.icon;
 
-            
-            {SECTIONS.map((section) => {
-              const Icon = section.icon;
+      return (
+        <button
+          key={section.id}
+          onClick={(e) => {
+            handleNavbarClick(e, section.id);
+            setIsMenuOpen(false);
+          }}
+          className="p-2 flex w-full bg-transparent justify-center rounded-full border border-gray-700 text-center items-center gap-1 text-md text-gray-200 hover:text-blue-700 transition-colors duration-200"
+        >
+          {section.label}
+        </button>
+      );
+    })}
 
-              return (
-                <button
-                  key={section.id}
-                  onClick={(e) => {
-                    handleNavbarClick(e, section.id);
-                    setIsMenuOpen(false);
-                  }}
-                  className="p-2 flex w-full bg-blue-950/20 justify-center rounded-xl border-blue-700 text-center items-center gap-1 text-md text-gray-200"
-                >
-                  {section.label}
-                </button>
-              );
-            })}
-          </div>
-        )}
+     <Anchor
+        className="bg-gradient-secondary italic w-10 h-10 rounded-full m-auto mt-5 hover:brightness-90 hover:translate-y-0"
+        text="¡Hablemos!"
+        animation={true}
+        onClick={(e) => 
+        {
+          e.preventDefault()
+          document
+            .getElementById("contact")
+            ?.scrollIntoView({ behavior: "smooth" })
+
+        }
+        }
+        href=""
+      />
+  </div>
+)}
       </header>
 
       <main className="flex flex-col">
@@ -191,7 +224,7 @@ function App() {
       </main>
 
       {/* Opcional: Footer */}
-      <footer className="bg-gray-900 text-sm ">
+      <footer className="bg-gray-900 text-sm text-center p-2">
         <p>© 2026 AlejoGomezDev</p>
       </footer>
     </div>

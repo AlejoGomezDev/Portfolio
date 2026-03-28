@@ -3,6 +3,7 @@ import linkedIn from "../../assets/logotipos/linkedin.svg";
 import GitHub from "../../assets/logotipos/github.svg";
 import { Button } from "../ui/Button";
 import ImagenPersonal from "../../assets/Imagenes/Personal/in.jpg"
+import { Anchor } from "../ui/Anchor";
 
 export function Home() {
   const socialLinks = [
@@ -50,21 +51,27 @@ export function Home() {
 
           {/* BOTONES */}
           <div className="flex flex-wrap gap-3 sm:gap-4 items-center justify-center lg:justify-start mt-6 sm:mt-8">
-            <Button
-              className="bg-gradient-primary w-full sm:w-auto min-w-40 italic flex items-center justify-center text-sm"
-              text="Descargar mi CV"
-              animation
-            />
 
-            <Button
-              onClick={() =>
+            <Anchor
+            className="bg-gradient-primary w-full sm:w-auto min-w-40 italic flex items-center justify-center text-sm"
+            text="Descargar mi CV"
+            animation = {true}
+            href="https://docs.google.com/document/d/1LhV-8XImLrJmY3zIBHWOTDwyx2Km6vq_vQwDacVZEV4/edit?usp=sharing"
+            target="_blank"
+            />
+            <Anchor
+              onClick={(e) =>{
+                e.preventDefault()
                 document
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" })
+
+              }
               }
               className="bg-gradient-secondary w-full sm:w-auto min-w-40 text-sm"
               text="¡Hablemos!"
               animation={true}
+              href=""
             />
 
             <div className="flex gap-3 sm:gap-4">
